@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright © 2020 René Wirnata.
+  This file is part of Complex Beauties Explorer (CmplxBE).
+
+  CmplxBE is free software: you can redistribute it and/or modify it under the
+  terms of the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option) any later
+  version.
+
+  CmplxBE is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+  A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along with
+  CmplxBE. If not, see <http://www.gnu.org/licenses/>.
+-->
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1450</width>
+    <height>946</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Complex Beauties Explorer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="4" column="3">
+     <widget class="QLabel" name="imageCanvas">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/images/icons/logo_PS.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1450</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QDockWidget" name="dockGrid">
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockGridContent">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupGrid">
+       <property name="title">
+        <string>Grid</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_6"/>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockIsochromaticLines">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockIsochromaticLinesContent">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Isochromatic Lines</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockNav">
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockNavContents">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QGroupBox" name="groupNav">
+       <property name="title">
+        <string>Navigation</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="3" column="2">
+         <widget class="QToolButton" name="btnLeft">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/left.svg</normaloff>:/images/icons/left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+Left</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QToolButton" name="btnRight">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/right.svg</normaloff>:/images/icons/right.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+Right</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="6">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="7" column="1">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="5">
+         <widget class="QToolButton" name="btnRightt">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/rright.svg</normaloff>:/images/icons/rright.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QToolButton" name="btnLeftt">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/lleft.svg</normaloff>:/images/icons/lleft.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QToolButton" name="btnCenter">
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/images/icons/refresh.svg</normaloff>:/images/icons/refresh.svg</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>31</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="shortcut">
+               <string>Ctrl+R</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="2">
+         <widget class="QToolButton" name="btnDownLeft">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/down_left.svg</normaloff>:/images/icons/down_left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QToolButton" name="btnUp">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/up.svg</normaloff>:/images/icons/up.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+Up</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QToolButton" name="btnUpLeft">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/up_left.svg</normaloff>:/images/icons/up_left.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="6" column="1" colspan="5">
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QToolButton" name="btnZZoomOut">
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/icons/zoomout.svg</normaloff>:/images/icons/zoomout.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnZoomOut">
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/icons/zoomout.svg</normaloff>:/images/icons/zoomout.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnZoomIn">
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/icons/zoomin.svg</normaloff>:/images/icons/zoomin.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnZZoomIn">
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/icons/zoomin.svg</normaloff>:/images/icons/zoomin.svg</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="3">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="4">
+         <widget class="QToolButton" name="btnDownRight">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/down_right.svg</normaloff>:/images/icons/down_right.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QToolButton" name="btnDown">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/down.svg</normaloff>:/images/icons/down.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+Down</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QToolButton" name="btnDownn">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/downn.svg</normaloff>:/images/icons/downn.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QToolButton" name="btnUpp">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/upp.svg</normaloff>:/images/icons/upp.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QToolButton" name="btnUpRight">
+          <property name="icon">
+           <iconset resource="resources.qrc">
+            <normaloff>:/images/icons/up_right.svg</normaloff>:/images/icons/up_right.svg</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockFunction">
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockFunctionContents">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupFunction">
+       <property name="title">
+        <string>Function and Dimensions</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="8" column="2">
+         <widget class="QLabel" name="labelImag">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>imag</string>
+          </property>
+         </widget>
+        </item>
+        <item row="20" column="2" colspan="4">
+         <widget class="QLabel" name="labelQuickSelect">
+          <property name="text">
+           <string>Quick Select (width)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="26" column="2" colspan="4">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="btnUpdate">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>update</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnAuto">
+            <property name="text">
+             <string>auto</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="11" column="3">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="1">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="labelFz">
+          <property name="text">
+           <string>f(z) = </string>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="2">
+         <widget class="QLabel" name="labelWidth">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>width</string>
+          </property>
+         </widget>
+        </item>
+        <item row="14" column="3">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="6">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="4">
+         <widget class="QLabel" name="labelTo2">
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>to</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="2">
+         <widget class="QLabel" name="labelReal">
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>real</string>
+          </property>
+         </widget>
+        </item>
+        <item row="13" column="2" colspan="4">
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="4">
+         <widget class="QLabel" name="labelFunction">
+          <property name="text">
+           <string>Complex Function</string>
+          </property>
+         </widget>
+        </item>
+        <item row="17" column="3" colspan="3">
+         <widget class="QSpinBox" name="sboxWidth">
+          <property name="suffix">
+           <string> px</string>
+          </property>
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="singleStep">
+           <number>100</number>
+          </property>
+          <property name="stepType">
+           <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+          </property>
+          <property name="value">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="3" colspan="3">
+         <widget class="QCheckBox" name="cboxEqualAxes">
+          <property name="text">
+           <string>keep axes scaling</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
+         <widget class="QLabel" name="labelTo1">
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>to</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="21" column="2" colspan="4">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QToolButton" name="btnWidth500">
+            <property name="text">
+             <string>500</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnWidth1000">
+            <property name="text">
+             <string>1000</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnWidth2500">
+            <property name="text">
+             <string>2500</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnWidth5000">
+            <property name="text">
+             <string>5000</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="18" column="2">
+         <widget class="QLabel" name="labelHeight">
+          <property name="text">
+           <string>height</string>
+          </property>
+         </widget>
+        </item>
+        <item row="18" column="3" colspan="3">
+         <widget class="QSpinBox" name="sboxHeight">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="suffix">
+           <string> px</string>
+          </property>
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+          <property name="singleStep">
+           <number>100</number>
+          </property>
+          <property name="stepType">
+           <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+          </property>
+          <property name="value">
+           <number>1000</number>
+          </property>
+         </widget>
+        </item>
+        <item row="16" column="3" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QCheckBox" name="cboxAspectRatio">
+            <property name="text">
+             <string>keep ratio</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="cboxOneToOne">
+            <property name="text">
+             <string>1:1</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="3" colspan="3">
+         <widget class="QLineEdit" name="leFunc">
+          <property name="text">
+           <string>(z - 1) / (z**2 + z + 1)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="27" column="3">
+         <spacer name="verticalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="23" column="3">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="7" column="3">
+         <widget class="QLineEdit" name="leRealMin">
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>-2.0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="5">
+         <widget class="QLineEdit" name="leRealMax">
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>2.0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="3">
+         <widget class="QLineEdit" name="leImagMin">
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>-2.0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="5">
+         <widget class="QLineEdit" name="leImagMax">
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>2.0</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockDomain">
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockDomainContents">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QGroupBox" name="groupDomain">
+       <property name="title">
+        <string>Domain</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="1">
+         <widget class="QLabel" name="domainCanvas">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>220</width>
+            <height>220</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btnAuto</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>btnUpdate</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>766</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>108</x>
+     <y>766</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboxOneToOne</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cboxAspectRatio</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>308</x>
+     <y>711</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>150</x>
+     <y>711</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboxAspectRatio</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>sboxHeight</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>711</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>237</x>
+     <y>677</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cboxOneToOne</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cboxAspectRatio</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>232</x>
+     <y>652</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>652</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

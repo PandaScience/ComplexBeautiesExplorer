@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="images">
+    <file>icons/zoomin.svg</file>
+    <file>icons/zoomout.svg</file>
+    <file>icons/down.svg</file>
+    <file>icons/down_left.svg</file>
+    <file>icons/downn.svg</file>
+    <file>icons/downn_left.svg</file>
+    <file>icons/downn_right.svg</file>
+    <file>icons/down_right.svg</file>
+    <file>icons/left.svg</file>
+    <file>icons/lleft.svg</file>
+    <file>icons/logo_PS.png</file>
+    <file>icons/refresh.svg</file>
+    <file>icons/right.svg</file>
+    <file>icons/rright.svg</file>
+    <file>icons/solid_right.svg</file>
+    <file>icons/up.svg</file>
+    <file>icons/up_left.svg</file>
+    <file>icons/upp.svg</file>
+    <file>icons/upp_left.svg</file>
+    <file>icons/upp_right.svg</file>
+    <file>icons/up_right.svg</file>
+  </qresource>
+</RCC>
